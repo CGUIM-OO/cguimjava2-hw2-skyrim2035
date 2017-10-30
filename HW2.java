@@ -4,7 +4,15 @@ import java.util.Scanner;
 
 /**
  * @author TODO: please add student ID and name here
+ * B0344235 簡名浩
  * Try to write some comments for your codes (methods, 15 points)
+ * 1. Deck 類別：用來定義及產生撲克牌組。
+ * 2. Card 類別：用來定義及轉換卡牌的數字及花色。
+ * 3. Deck 方法（Deck 的建構式）：使用 for 迴圈根據使用者輸入的數字 n 產生 n 組完整的撲克牌組。
+ * 4. printDeck 方法：使用 for 迴圈及呼叫 Card 類別裡的 printCard 方法印出所有排組的所有卡片。
+ * 5. getAllCards 方法：回傳 ArrayList<Card>。
+ * 6. printCard 方法：使用 switch case 轉換撲克牌的數字及花色。
+ * 7. getSuit 及 getRank 方法：回傳撲克牌的花色及數字。
  */
 public class HW2 {
 
@@ -77,13 +85,22 @@ class Deck{
 		//Card card=new Card(1,1); ->means new card as clubs ace
 		//cards.add(card);
 		//Sample code end
-
+		for(int n = 0; n < nDeck; n++) {
+			for(int i = 1; i <= 4; i++) {
+				for(int j = 1; j <= 13; j++) {
+					Card card = new Card(i,j);
+					cards.add(card);
+				}
+			}
+		}
 	}	
 	//TODO: Please implement the method to print all cards on screen (10 points)
 	public void printDeck(){
 		//Hint: print all items in ArrayList<Card> cards, 
 		//TODO: please implement and reuse printCard method in Card class (5 points)
-
+		for(int i = 0; i < cards.size(); i++) {
+			getAllCards().get(i).printCard();
+		}
 	}
 	public ArrayList<Card> getAllCards(){
 		return cards;
@@ -106,6 +123,66 @@ class Card{
 	//TODO: 1. Please implement the printCard method (20 points, 10 for suit, 10 for rank)
 	public void printCard(){
 		//Hint: print (System.out.println) card as suit,rank, for example: print 1,1 as Clubs Ace
+		switch(getSuit()) {
+		case 1:
+			System.out.print("Clubs ");
+			break;
+		case 2:
+			System.out.print("Diamonds ");
+			break;
+		case 3:
+			System.out.print("Hearts ");
+			break;
+		case 4:
+			System.out.print("Spades ");
+			break;
+		default:
+			System.out.print("N/A ");
+		}
+		
+		switch(getRank()) {
+		case 1:
+			System.out.println("Ace");
+			break;
+		case 2:
+			System.out.println("Two");
+			break;
+		case 3:
+			System.out.println("Three");
+			break;
+		case 4:
+			System.out.println("Four");
+			break;
+		case 5:
+			System.out.println("Five");
+			break;
+		case 6:
+			System.out.println("Six");
+			break;
+		case 7:
+			System.out.println("Seven");
+			break;
+		case 8:
+			System.out.println("Eight");
+			break;
+		case 9:
+			System.out.println("Nine");
+			break;
+		case 10:
+			System.out.println("Ten");
+			break;
+		case 11:
+			System.out.println("Jack");
+			break;
+		case 12:
+			System.out.println("Queen");
+			break;
+		case 13:
+			System.out.println("King");
+			break;
+		default:
+			System.out.println("N/A");
+		}
 
 	}
 	public int getSuit(){
