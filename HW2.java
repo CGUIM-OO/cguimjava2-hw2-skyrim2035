@@ -74,10 +74,10 @@ public class HW2 {
 /**
  * Description: TODO: please add description here
  */
-class Deck{
+class Deck {
 	private ArrayList<Card> cards;
 	//TODO: Please implement the constructor (30 points)
-	public Deck(int nDeck){
+	public Deck(int nDeck) {
 		cards=new ArrayList<Card>();
 		//1 Deck have 52 cards, https://en.wikipedia.org/wiki/Poker
 		//Hint: Use new Card(x,y) and 3 for loops to add card into deck
@@ -95,33 +95,33 @@ class Deck{
 		}
 	}	
 	//TODO: Please implement the method to print all cards on screen (10 points)
-	public void printDeck(){
+	public void printDeck() {
 		//Hint: print all items in ArrayList<Card> cards, 
 		//TODO: please implement and reuse printCard method in Card class (5 points)
 		for(int i = 0; i < cards.size(); i++) {
 			getAllCards().get(i).printCard();
 		}
 	}
-	public ArrayList<Card> getAllCards(){
+	public ArrayList<Card> getAllCards() {
 		return cards;
 	}
 }
 /**
  * Description: TODO: please add description here
  */
-class Card{
+class Card {
 	private int suit; //Definition: 1~4, Clubs=1, Diamonds=2, Hearts=3, Spades=4
 	private int rank; //1~13
 	/**
 	 * @param s suit
 	 * @param r rank
 	 */
-	public Card(int s,int r){
+	public Card(int s,int r) {
 		suit=s;
 		rank=r;
 	}	
 	//TODO: 1. Please implement the printCard method (20 points, 10 for suit, 10 for rank)
-	public void printCard(){
+	public void printCard() {
 		//Hint: print (System.out.println) card as suit,rank, for example: print 1,1 as Clubs Ace
 		switch(getSuit()) {
 		case 1:
@@ -185,10 +185,10 @@ class Card{
 		}
 
 	}
-	public int getSuit(){
+	public int getSuit() {
 		return suit;
 	}
-	public int getRank(){
+	public int getRank() {
 		return rank;
 	}
 }
